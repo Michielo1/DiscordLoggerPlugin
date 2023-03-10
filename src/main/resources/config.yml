@@ -2,9 +2,11 @@
 # DiscordLogger #
 #################
 
-# The discord webhook URL #
+# The webhook URL #
 URL: ""
 
 Settings:
   # If this is true we will send an alert in the console when we send a webhook message
-  alerts: true
+  webhook_alerts: true
+  # If this is true we will send a discord message if the plugin gets enabled or disabled
+  plugin_alerts: true

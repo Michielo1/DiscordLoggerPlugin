@@ -1,0 +1,10 @@
+#################
+# DiscordLogger #
+#################
+
+# The discord webhook URL #
+URL: ""
+
+Settings:
+  # If this is true we will send an alert in the console when we send a webhook message
+  alerts: true

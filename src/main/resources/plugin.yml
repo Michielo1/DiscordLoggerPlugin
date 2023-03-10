@@ -1,0 +1,8 @@
+name: DiscordLogger
+version: 1.0.0
+author: Michielo
+main: me.michielo.discordlogger.DiscordLogger
+api-version: 1.13
+
+commands:
+  discordlogger:

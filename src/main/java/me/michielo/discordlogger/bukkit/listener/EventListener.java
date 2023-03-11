@@ -27,6 +27,7 @@ public class EventListener implements Listener {
                 if (m.toString().contains("handle")) {
                     // using a null obj as the method is always static
                     m.invoke(null, event);
+                    return;
                 }
             }
         } catch (ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {}
@@ -40,6 +41,7 @@ public class EventListener implements Listener {
                 if (m.toString().contains("handle")) {
                     // using a null obj as the method is always static
                     m.invoke(null, event);
+                    return;
                 }
             }
         } catch (ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {}

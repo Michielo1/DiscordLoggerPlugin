@@ -1,4 +1,4 @@
-package me.michielo.discordlogger.eventhandler;
+package me.michielo.discordlogger.eventhandler.player;
 
 import me.michielo.discordlogger.util.Logger;
 

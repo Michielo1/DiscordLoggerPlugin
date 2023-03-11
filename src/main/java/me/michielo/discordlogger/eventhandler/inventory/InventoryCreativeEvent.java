@@ -1,4 +1,4 @@
-package me.michielo.discordlogger.eventhandler;
+package me.michielo.discordlogger.eventhandler.inventory;
 
 import me.michielo.discordlogger.util.Logger;
 import org.bukkit.entity.Player;

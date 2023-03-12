@@ -23,39 +23,31 @@ public class EventListener implements Listener {
         Logger.logInfo(name);
 
         try {
-            Bukkit.getLogger().info("TRYING PLAYER");
-            name = "me.michielo.discordlogger.eventhandler.player." + name;
-            Class<?> clazz = Class.forName(name);
+            String packagename = "me.michielo.discordlogger.eventhandler.player." + name;
+            Class<?> clazz = Class.forName(packagename);
 
             for (Method m : clazz.getDeclaredMethods()) {
                 if (m.toString().contains("handle")) {
                     // using a null obj as the method is always static
                     m.invoke(null, event);
-                    Bukkit.getLogger().info("INVOKED METHOD PLAYER");
                     return;
                 }
             }
-        } catch (ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
+        } catch (ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {}
 
         // inventory events
         try {
-            Bukkit.getLogger().info("TRYING INVENTORY");
-            name = "me.michielo.discordlogger.eventhandler.inventory." + name;
-            Class<?> clazz = Class.forName(name);
+            String packagename = "me.michielo.discordlogger.eventhandler.inventory." + name;
+            Class<?> clazz = Class.forName(packagename);
 
             for (Method m : clazz.getDeclaredMethods()) {
                 if (m.toString().contains("handle")) {
                     // using a null obj as the method is always static
                     m.invoke(null, event);
-                    Bukkit.getLogger().info("INVOKED METHOD INV");
                     return;
                 }
             }
-        } catch (ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
+        } catch (ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {}
 
 
         // couldn't find the associated class, this should not happen if version control does its job

@@ -98,10 +98,7 @@ public class DiscordWebhook {
                 for (String string : toSend) {
                     if (countMap.get(string) != null) {
                         if (replacedValue.get(string) == null) {
-                            System.out.println(string);
-                            System.out.println("replaced with " + countMap.get(string));
                             String newStr = string.replaceAll("\\b\\d+\\b", String.valueOf(countMap.get(string)));
-                            System.out.println(newStr);
                             str.append("\n" + newStr);
                             replacedValue.put(string, true);
                         }

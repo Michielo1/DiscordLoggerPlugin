@@ -15,7 +15,7 @@ public class PlayerJoinEvent {
             builder.append(e.getPlayer().getName() + " joined the server!");
         }
 
-        Logger.logEmbed(builder.toString());
+        Logger.logEmbed(builder.toString(), e.getPlayer());
     }
 
 }

@@ -9,7 +9,7 @@ public class PlayerCommandPreprocessEvent {
 
         String str = e.getPlayer().getName() + " ran the command: " + e.getMessage();
 
-        Logger.logEmbed(str);
+        Logger.logEmbed(str, e.getPlayer());
     }
 
 }

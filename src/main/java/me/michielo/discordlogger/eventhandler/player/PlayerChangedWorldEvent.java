@@ -9,7 +9,7 @@ public class PlayerChangedWorldEvent {
 
         String str = e.getPlayer().getName() + " moved to world: " + e.getPlayer().getWorld().getName() + " from: " + e.getFrom().getName();
 
-        Logger.logEmbed(str);
+        Logger.logEmbed(str, e.getPlayer());
     }
 
 

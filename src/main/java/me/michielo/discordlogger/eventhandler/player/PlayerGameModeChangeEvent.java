@@ -9,7 +9,7 @@ public class PlayerGameModeChangeEvent {
 
         String str = e.getPlayer().getName() + " changed their gamemode to: " + e.getNewGameMode();
 
-        Logger.logEmbed(str);
+        Logger.logEmbed(str, e.getPlayer());
     }
 
 }

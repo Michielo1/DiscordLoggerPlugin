@@ -9,7 +9,7 @@ public class AsyncPlayerChatEvent {
 
         String str = e.getPlayer().getName() + " send the messge: " + e.getMessage();
 
-        Logger.logEmbed(str);
+        Logger.logEmbed(str, e.getPlayer());
     }
 
 }

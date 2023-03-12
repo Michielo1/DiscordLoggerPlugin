@@ -9,7 +9,7 @@ public class PlayerDropItemEvent {
 
         String str = e.getPlayer().getName() + " dropped " + e.getItemDrop().getItemStack().getAmount() + " " + e.getItemDrop().getItemStack().getType().name();
 
-        Logger.logEmbed(str);
+        Logger.logEmbed(str, e.getPlayer());
     }
 
 }

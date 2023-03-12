@@ -24,14 +24,14 @@ public class PlayerEditBookEvent {
 
                 String str = e.getPlayer().getName() + " edited a book called: " + e.getNewBookMeta().getTitle() +
                         "! \nYou can find the new text here: " + link;
-                Logger.logEmbed(str);
+                Logger.logEmbed(str, e.getPlayer());
             });
         } else {
             // the book just has one page, we'll log that
             String str = e.getPlayer().getName() + " edited a book called: " + e.getNewBookMeta().getTitle() +
                     "\nThe new text:\n";
             for (String text : e.getNewBookMeta().getPages()) str = str + text;
-            Logger.logEmbed(str);
+            Logger.logEmbed(str, e.getPlayer());
         }
     }
 

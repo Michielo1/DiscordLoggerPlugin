@@ -17,9 +17,9 @@ public class DiscordWebhook {
     private static List<String> toSend;
     private static boolean awaitingLog;
 
-    public DiscordWebhook(DiscordLogger plugin) {
+    public DiscordWebhook() {
         // instance
-        pluginInstance = plugin;
+        pluginInstance = DiscordLogger.getInstance();
 
         // init vars
         lastEmbed = new Date(System.currentTimeMillis());
@@ -27,7 +27,7 @@ public class DiscordWebhook {
         awaitingLog = false;
 
         // init client
-        WebhookClientBuilder builder = new WebhookClientBuilder(plugin.getConfig().getString("URL"));
+        WebhookClientBuilder builder = new WebhookClientBuilder(pluginInstance.getConfig().getString("URL"));
         builder.setThreadFactory((job) -> {
             Thread thread = new Thread(job);
             thread.setName("DiscordLogger");

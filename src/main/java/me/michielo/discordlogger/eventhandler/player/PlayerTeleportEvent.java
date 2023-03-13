@@ -12,7 +12,7 @@ public class PlayerTeleportEvent {
         Location to = e.getTo();
 
         String str = e.getPlayer().getName() + " teleported to " + to.getX() + " " + to.getY() + " " + to.getZ() + " from " +
-                from.getX() + " " + to.getY() + " " + to.getZ();
+                from.getX() + " " + from.getY() + " " + from.getZ();
 
         Logger.logEmbed(str, e.getPlayer());
     }

@@ -11,7 +11,7 @@ public class PlayerEditBookEvent {
         org.bukkit.event.player.PlayerEditBookEvent e = (org.bukkit.event.player.PlayerEditBookEvent) event;
 
         if (e.getNewBookMeta().getPageCount() > 1) {
-            // there is more than one page, we'll create a pastebin to make sure it stays organized
+            // if there is more than one page, we'll create a pastebin to make sure it stays organized
             // to do this we'll go on a new thread to make sure we're not blocking the main thread
             Bukkit.getServer().getScheduler().runTaskAsynchronously(DiscordLogger.getInstance(), () -> {
                 StringBuilder bookcontent = new StringBuilder();

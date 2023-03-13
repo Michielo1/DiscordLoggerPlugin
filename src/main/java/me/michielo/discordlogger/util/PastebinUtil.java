@@ -11,7 +11,7 @@ public class PastebinUtil {
     public static String createPastebin(String content, String title) {
         final PastebinClient client = PastebinClient
                 .builder()
-                .developerKey("")
+                .developerKey("") //add your own developer key here
                 .build();
         final PasteRequest request = PasteRequest
                 .content(content)

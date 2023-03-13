@@ -86,7 +86,7 @@ public class Logger {
     }
 
     /*
-        Util method for logEmbed
+        Util method for logEmbed to remove unnecessary messages
      */
 
     private static void findConflict(Player p) {

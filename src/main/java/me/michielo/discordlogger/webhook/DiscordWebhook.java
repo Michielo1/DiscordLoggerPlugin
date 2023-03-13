@@ -17,9 +17,9 @@ public class DiscordWebhook {
     private static List<String> toSend;
     private static boolean awaitingLog;
 
-    public DiscordWebhook(DiscordLogger plugin) {
+    public DiscordWebhook() {
         // instance
-        pluginInstance = plugin;
+        pluginInstance = DiscordLogger.getInstance();
 
         // init vars
         lastEmbed = new Date(System.currentTimeMillis());
@@ -27,7 +27,7 @@ public class DiscordWebhook {
         awaitingLog = false;
 
         // init client
-        WebhookClientBuilder builder = new WebhookClientBuilder(plugin.getConfig().getString("URL"));
+        WebhookClientBuilder builder = new WebhookClientBuilder(pluginInstance.getConfig().getString("URL"));
         builder.setThreadFactory((job) -> {
             Thread thread = new Thread(job);
             thread.setName("DiscordLogger");
@@ -40,7 +40,7 @@ public class DiscordWebhook {
 
     public static void log(String str) {
 
-        // checking if we've send a discord message in the last second
+        // checking if we've sent a discord message in the last second
         Date buffer = new Date(System.currentTimeMillis() - 1000);
         if (lastEmbed.after(buffer) || awaitingLog) {
             // too soon!
@@ -98,10 +98,7 @@ public class DiscordWebhook {
                 for (String string : toSend) {
                     if (countMap.get(string) != null) {
                         if (replacedValue.get(string) == null) {
-                            System.out.println(string);
-                            System.out.println("replaced with " + countMap.get(string));
                             String newStr = string.replaceAll("\\b\\d+\\b", String.valueOf(countMap.get(string)));
-                            System.out.println(newStr);
                             str.append("\n" + newStr);
                             replacedValue.put(string, true);
                         }

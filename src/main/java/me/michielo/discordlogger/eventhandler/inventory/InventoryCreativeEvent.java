@@ -1,4 +1,4 @@
-package me.michielo.discordlogger.eventhandler;
+package me.michielo.discordlogger.eventhandler.inventory;
 
 import me.michielo.discordlogger.util.Logger;
 import org.bukkit.entity.Player;
@@ -20,7 +20,7 @@ public class InventoryCreativeEvent {
             builder.append(player.getName() + " took out " + cursorItem.getAmount() + " " + cursorItem.getType() + " from their creative inventory");
         }
 
-        Logger.logEmbed(builder.toString());
+        Logger.logEmbed(builder.toString(), player);
     }
 
 

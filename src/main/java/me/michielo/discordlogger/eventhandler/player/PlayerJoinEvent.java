@@ -1,4 +1,4 @@
-package me.michielo.discordlogger.eventhandler;
+package me.michielo.discordlogger.eventhandler.player;
 
 import me.michielo.discordlogger.util.Logger;
 
@@ -15,7 +15,7 @@ public class PlayerJoinEvent {
             builder.append(e.getPlayer().getName() + " joined the server!");
         }
 
-        Logger.logEmbed(builder.toString());
+        Logger.logEmbed(builder.toString(), e.getPlayer());
     }
 
 }

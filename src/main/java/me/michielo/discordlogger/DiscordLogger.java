@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class DiscordLogger extends JavaPlugin {
 
     private boolean disabled;
+    private static DiscordLogger instance;
 
     @Override
     public void onEnable() {
@@ -19,6 +20,7 @@ public class DiscordLogger extends JavaPlugin {
             Init vars
          */
 
+        instance = this;
         disabled = false;
 
         /*
@@ -42,7 +44,7 @@ public class DiscordLogger extends JavaPlugin {
             Initialising some classes
          */
 
-        new DiscordWebhook(this);
+        new DiscordWebhook();
 
 
         Logger.logInfo("Started!");
@@ -65,6 +67,10 @@ public class DiscordLogger extends JavaPlugin {
         } else if (!disabled) {
             DiscordWebhook.log("DiscordLogger is being shut down!");
         }
+    }
+
+    public static DiscordLogger getInstance() {
+        return instance;
     }
 
 }

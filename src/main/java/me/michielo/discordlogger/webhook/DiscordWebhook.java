@@ -40,7 +40,7 @@ public class DiscordWebhook {
 
     public static void log(String str) {
 
-        // checking if we've send a discord message in the last second
+        // checking if we've sent a discord message in the last second
         Date buffer = new Date(System.currentTimeMillis() - 1000);
         if (lastEmbed.after(buffer) || awaitingLog) {
             // too soon!
